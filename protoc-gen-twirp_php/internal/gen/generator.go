@@ -86,6 +86,9 @@ func (g *generator) Generate(req *Request) (*plugin.CodeGeneratorResponse, error
 		}
 	}
 
+	supportsProto3Optional := uint64(plugin.CodeGeneratorResponse_FEATURE_PROTO3_OPTIONAL)
+	resp.SupportedFeatures = &supportsProto3Optional
+
 	return resp, nil
 }
 
